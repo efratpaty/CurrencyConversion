@@ -5,7 +5,7 @@ namespace CurrencyConversion.BL
 {
     public class CurrencyConversionFileParser : IFileParser
     {
-        public List<RequestedCurrencies> ParseFile(string fileName) 
+        public List<RequestedCurrencies> ParseFile(string fileName)
         {
             List<RequestedCurrencies> lrc = new List<RequestedCurrencies>();
             RequestedCurrencies rc = new RequestedCurrencies();

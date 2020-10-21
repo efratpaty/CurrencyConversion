@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;//List
-using System.Text;
+﻿using System.Collections.Generic;//List
 
 namespace CurrencyConversion.BL
 {

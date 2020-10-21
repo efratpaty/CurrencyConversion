@@ -27,7 +27,8 @@ namespace CurrencyConversion
             if (keySelector == null) throw new ArgumentNullException("keySelector");
             if (elementSelector == null) throw new ArgumentNullException("elementSelector");
             ConcurrentDictionary<TKey, TElement> d = new ConcurrentDictionary<TKey, TElement>();
-            foreach (TSource element in source){ 
+            foreach (TSource element in source)
+            {
                 d.GetOrAdd(keySelector(element), elementSelector(element)); //ignores duplicates, adds only new keys
             }
             return d;

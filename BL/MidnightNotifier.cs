@@ -24,7 +24,7 @@ namespace CurrencyConversion.BL
 
         private static double GetSleepTime()
         {
-           var midnightTonight = DateTime.Today.AddDays(1);
+            var midnightTonight = DateTime.Today.AddDays(1);
             var differenceInMilliseconds = (midnightTonight - DateTime.Now).TotalMilliseconds;
             return differenceInMilliseconds;
         }

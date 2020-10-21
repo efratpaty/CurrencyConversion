@@ -18,7 +18,7 @@ namespace CurrencyConversion.BL
 
         public List<float> ConvertCurrencies(RequestedCurrencies requestedCurrencies)
         {   //Get conversion rate by dividing expected currency value with  given currency value 
-            float rate =  (float)_ds.GetVal(requestedCurrencies._expectedCurrency)/ (float)_ds.GetVal(requestedCurrencies._givenCurrency);
+            float rate = (float)_ds.GetVal(requestedCurrencies._expectedCurrency) / (float)_ds.GetVal(requestedCurrencies._givenCurrency);
             List<float> convertedSums = new List<float>();
             foreach (float sum in requestedCurrencies._sums)
             {

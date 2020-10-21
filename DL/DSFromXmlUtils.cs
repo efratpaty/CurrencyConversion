@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Concurrent; //ConcurrentDictionary
+using System.Collections.Generic; //KeyNotFoundException
+using System.Collections.Specialized; //NameValueCollection
+using System.ComponentModel; //TypeDescriptor
 using System.IO; // File
 using System.Xml.Linq; // Xelement
-using System.Collections.Concurrent; //ConcurrentDictionary
-using System.ComponentModel; //TypeDescriptor
-using System.Collections.Specialized; //NameValueCollection
-using System.Collections.Generic; //KeyNotFoundException
 
 namespace CurrencyConversion
 {
@@ -90,4 +90,4 @@ namespace CurrencyConversion
         }
     }
 }
-   
+
