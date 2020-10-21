@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CurrencyConversion": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\Shevi\\source\\repos\\CurrencyConversion\\RequestedCurrencies.txt"
+    }
+  }
+}
