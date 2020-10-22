@@ -6,10 +6,10 @@ namespace CurrencyConversion.BL
     {
         public string _givenCurrency;
         public string _expectedCurrency;
-        public List<float> _sums;
+        public List<double> _sums;
         public RequestedCurrencies()
         {
-            _sums = new List<float>();
+            _sums = new List<double>();
         }
     }
 }

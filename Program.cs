@@ -10,16 +10,23 @@ namespace CurrencyConversion
     class Program
     {
 
-        static private void PrintListsVals(List<List<float>> lists)
+        static private void PrintListsVals<T>(List<List<T>> lists)
         {
             //Print converted currencies
-            foreach (List<float> sums in lists)
+            foreach (var sums in lists)
             {
-                foreach (float val in sums)
+                foreach (var val in sums)
                 {
                     Console.WriteLine("{0}", val);
                 }
             }
+        }
+
+        public static void ConvertCurrenciesFromGivenFile(IFileParser fileParser, CurrencyConverter currencyConverter, string fileName)
+        {
+            List<RequestedCurrencies> requestedCurrencies = fileParser.ParseFile(fileName);
+            List<List<double>> sumsInRequestedCurrency = currencyConverter.ConvertCurrencies(requestedCurrencies);
+            PrintListsVals<double>(sumsInRequestedCurrency);
         }
 
         static void Main(string[] args)
@@ -33,10 +40,7 @@ namespace CurrencyConversion
 
             CurrencyConverter currencyConverter = new CurrencyConverter(dsConfig);
             IFileParser fileParser = new CurrencyConversionFileParser();
-            List<RequestedCurrencies> requestedCurrencies = fileParser.ParseFile(args[0]);
-            List<List<float>> sumsInRequestedCurrency = currencyConverter.ConvertCurrencies(requestedCurrencies);
-            PrintListsVals(sumsInRequestedCurrency);
-            Console.ReadLine();
+            ConvertCurrenciesFromGivenFile(fileParser, currencyConverter, args[0]);
         }
 
     }

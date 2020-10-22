@@ -16,19 +16,19 @@ namespace CurrencyConversion.BL
             MidnightNotifier.DayChanged += (s, e) => { _ds.UpdateDS(dsConfig); Console.WriteLine("updatad ds"); }; // Update ds at midnight every day 
         }
 
-        public List<float> ConvertCurrencies(RequestedCurrencies requestedCurrencies)
+        public List<double> ConvertCurrencies(RequestedCurrencies requestedCurrencies)
         {   //Get conversion rate by dividing expected currency value with  given currency value 
-            float rate = (float)_ds.GetVal(requestedCurrencies._expectedCurrency) / (float)_ds.GetVal(requestedCurrencies._givenCurrency);
-            List<float> convertedSums = new List<float>();
+            float rate = _ds.GetVal(requestedCurrencies._expectedCurrency) / _ds.GetVal(requestedCurrencies._givenCurrency);
+            List<double> convertedSums = new List<double>();
             foreach (float sum in requestedCurrencies._sums)
             {
                 convertedSums.Add(rate * sum); //The actual conversion
             }
             return convertedSums;
         }
-        public List<List<float>> ConvertCurrencies(List<RequestedCurrencies> requestedCurrencies)
+        public List<List<double>> ConvertCurrencies(List<RequestedCurrencies> requestedCurrencies)
         {
-            List<List<float>> sumsLists = new List<List<float>>();
+            List<List<double>> sumsLists = new List<List<Double>>();
             // convert currencies for each requested currency conversion
             foreach (RequestedCurrencies requested in requestedCurrencies)
             {

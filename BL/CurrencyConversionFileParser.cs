@@ -21,7 +21,7 @@ namespace CurrencyConversion.BL
                 rc._expectedCurrency = sr.ReadLine().Trim().ToUpper(); //Second line is expected currency
                 while (!sr.EndOfStream) // Remaining lines are sums in given currency that needs to be converted to expected currencies
                 {
-                    rc._sums.Add(float.Parse(sr.ReadLine().Trim()));
+                    rc._sums.Add(double.Parse(sr.ReadLine().Trim()));
                 }
             }
             lrc.Add(rc);
