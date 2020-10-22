@@ -5,14 +5,20 @@ The conversion is based on the UN conversion rate, the rates are updated at midn
 
 input file format:
 " given currency name
+
   expected currency name
+  
   sums to convert, each sum in new line"
 
 File example:
 " USD
+
   ILS
+  
   1
+  
   5
+  
   10.5"
   
  
