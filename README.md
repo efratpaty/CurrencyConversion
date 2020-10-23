@@ -1,6 +1,6 @@
 # CurrencyConversion
 
-The app recieves a file with currencies to convert and prints the conversion. 
+A console app that recieves a path to a file with currencies to convert, as cmd line argument, and prints the conversion. 
 The conversion is based on the UN conversion rate, the rates are updated at midnight.
 
 
